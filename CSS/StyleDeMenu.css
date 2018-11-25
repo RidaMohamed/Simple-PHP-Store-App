@@ -1,0 +1,342 @@
+*{
+
+    margin:  0 ;
+    padding: 0;
+
+}
+
+body{
+
+   font-family: "Lucida Console", Monaco, monospace;
+}
+
+.nav-bar{
+
+   width: 100%;
+   background: slateblue;
+   height: 75px;
+   padding: 5px 0;
+   box-sizing: border-box;
+   border-bottom: 10xp solid red;
+   
+}
+
+.nav-bar2{
+
+   width: 100%;
+   background: slateblue;
+   height: 100%;
+   padding: 1px 0;
+   box-sizing: border-box;
+   border-bottom: 10xp solid red;
+   
+}
+
+.nav-bar3{
+
+   width: 100%;
+   background: slateblue;
+   height: 100%;
+   padding: 1px 0;
+   box-sizing: border-box;
+   border-bottom: 10xp solid red;
+   
+}
+
+.nav-bar4{
+
+   width: 100%;
+   background: slateblue;
+   height: 100%;
+   padding: 1px 0;
+   box-sizing: border-box;
+   border-bottom: 10xp solid red;
+   
+}
+
+.nav-bar5{
+
+   width: 100%;
+   background: slateblue;
+   height: 100%;
+   padding: 1px 0;
+   box-sizing: border-box;
+   border-bottom: 10xp solid red;
+   
+}
+
+.nav-bar ul{
+
+   width : 1300px;
+   height: 100%;
+   margin: 0 auto;
+   list-style: none;
+   text-transform: uppercase;
+   font-weight: bold;
+   letter-spacing: 2px;   
+   position: relative;
+}
+
+.nav-bar ul li{
+
+   width: 150px;
+   float: left;
+   text-align: center;
+   padding: 10px 0;
+   color: #ffffff;
+   margin-right: 5px;
+  // background: red;
+   margin-top: 20px;
+   cursor: pointer;
+   transition: all 0.4% ease;
+   //border: 20px #ffffff;
+   
+  
+}
+
+.nav-bar2 ul li{
+
+   width: 125px;
+   float: left;
+   text-align: center;
+   padding: 10px 0;
+   color: #ffffff;
+   margin-right: 5px;
+   //background: red;
+   margin-top: 10px;
+   cursor: pointer;
+   transition: all 0.4% ease;
+   
+  
+}
+
+.nav-bar3 ul li{
+
+   width: 130px;
+   float: left;
+   text-align: center;
+   padding: 10px 0;
+   color: #ffffff;
+   margin-right: 20px;
+  // background: red;
+   margin-top: 13px;
+   cursor: pointer;
+   transition: all 0.4% ease;
+   
+  
+}
+
+.nav-bar4 ul li{
+
+   width: 125px;
+   float: left;
+   text-align: center;
+   padding: 10px 0;
+   color: #ffffff;
+   margin-right: 20px;
+  // background: red;
+   margin-top: 10px;
+   cursor: pointer;
+   transition: all 0.4% ease;
+   
+  
+}
+
+.nav-bar5 ul li{
+
+   width: 125px;
+   float: left;
+   text-align: center;
+   padding: 10px 0;
+   color: #ffffff;
+   margin-right: 20px;
+  // background: red;
+   margin-top: 10px;
+   cursor: pointer;
+   transition: all 0.4% ease;
+   
+  
+}
+
+.nav-bar ul li.li-4{
+
+   margin-top: 15px;
+   text-spacing: 0;
+   font-size: 14px;
+  
+}
+
+.nav-bar ul li.li-6 ,.nav-bar ul li.li-7{
+
+   margin-top: 13px;
+   text-spacing: 0;
+   //font-size: 14px;
+  
+}
+
+.nav-bar ul il:last-child{
+
+   margin-right:  0;
+   
+  
+}
+
+.nav-bar ul li:hover{
+
+    color: #00cccc;
+    
+  
+}
+
+.nav-bar ul li:hover .container-2{
+
+    color: #ffffff;
+}
+
+.nav-bar ul li .container-2 p:hover{
+
+    color: #00cccc;
+}
+
+
+.header-banner{
+
+   background: #00cccc;
+   width : 100%;
+   height: 75px;
+  
+}
+
+.container-2 {
+
+   position: absolute ;
+   top: 40px;
+   left: 0;
+   width: 92%;
+   height: 110px;
+  // background: red;
+   transition: all 0.4% ease ;
+   padding: 10px;
+   box-sizing: border-box;
+   visibility: hidden;
+   margin: 20px;
+   opacity:  0;
+}
+
+.container-3 {
+
+   position: absolute ;
+   top: 30px;
+   left: 0;
+   width: 88%;
+   height: 110px;
+   //background: blue;
+   transition: all 0.4% ease ;
+   padding: 10px;
+   box-sizing: border-box;
+   visibility: hidden;
+   margin: 20px;
+   opacity:  0;
+}
+
+.container-4{
+
+   position: absolute ;
+   top: 35px;
+   left: 0;
+   width: 82%;
+   height: 110px;
+   background: blue;
+   transition: all 0.4% ease ;
+   padding: 10px;
+   box-sizing: border-box;
+   visibility: hidden;
+   margin: 20px;
+   opacity:  0;
+}
+
+.container-5{
+
+   position: absolute ;
+   top: 35px;
+   left: 0;
+   width: 77%;
+   height: 110px;
+   background: white;
+   transition: all 0.4% ease ;
+   padding: 10px;
+   box-sizing: border-box;
+   visibility: hidden;
+   margin: 20px;
+   opacity:  0;
+}
+
+.nav-bar2 ul li{
+
+    font-size: 16px;
+   
+}
+
+.nav-bar3 ul li{
+
+    font-size: 16px;
+   
+}
+
+.nav-bar4 ul li{
+
+    font-size: 16px;
+   
+}
+
+.nav-bar5 ul li{
+
+    font-size: 16px;
+   
+}
+
+.iner-container2 {
+
+   width: 24%;
+   float :left;
+   margin-right: 1%;
+}
+
+.iner-container2:last-child{
+
+   margin-right: 0%;
+}
+
+.iner-container2 p {
+
+   padding: 10px;
+   transition: all 0.4% ease;
+}
+
+.nav-bar ul li:hover .container-2{
+
+   visibility: visible;
+   opacity:  10; 
+}
+
+.nav-bar2 ul li:hover .container-3{
+
+   visibility: visible;
+   opacity:  10; 
+}
+
+.nav-bar3 ul li:hover .container-4{
+
+   visibility: visible;
+   opacity:  10; 
+}
+
+.nav-bar4 ul li:hover .container-5{
+
+   visibility: visible;
+   opacity:  10; 
+}
+
+
+
+
