@@ -27,6 +27,40 @@ $tableau_sous_Cat4 = array ();
    $id = 0 ;
    $rec = '';
    
+   //fonction pour recuperer recette par la super categorie
+   function recupererRecetteSuperCat($id){
+       include 'Donnees.inc.php';
+       $rec = $Hierarchie['Aliment']['sous-categorie'][$id];
+       SousCategori1($rec , $id);
+       
+   }
+   
+   //fonction pour recuperer recette par la super categorie
+   function recupererRecetteCat1($ing){
+       include 'Donnees.inc.php';
+       
+   }
+   
+   //fonction pour recuperer recette par la super categorie
+   function recupererRecetteCat2($ing){
+       include 'Donnees.inc.php';
+       
+   }
+   
+   //fonction pour recuperer recette par la super categorie
+   function recupererRecetteCat3($ing){
+       include 'Donnees.inc.php';
+       
+   }
+   
+   //fonction pour recuperer recette par la super categorie
+   function recupererRecetteCat4($ing){
+       include 'Donnees.inc.php';
+       
+   }
+   
+  
+
    //------------------ces 2 methodes pour recuperer la sous categorie d'une super categorie
      function writeMessage($id) {
          include 'Donnees.inc.php';
@@ -35,12 +69,12 @@ $tableau_sous_Cat4 = array ();
          $rec = $Hierarchie['Aliment']['sous-categorie'][$id];
          //echo $rec;
          //echo 'mohamed';
-         SousCategori1($rec , $id);
+         Cherchersouscat1($rec);
          
 
             }
             
-     function SousCategori1($rec , $id) {
+     function Cherchersouscat1($rec ) {
          include 'Donnees.inc.php';
          global $tableau_sous_Cat ;
          $tableau_sous_Cat = array ();
@@ -54,7 +88,7 @@ $tableau_sous_Cat4 = array ();
                         if ($key1 == 'sous-categorie') {
                         foreach ($value1 as $key2 => $value2) {
                             //echo '<button type="button" onclick="echho(this.id)" >';
-                            array_push($sousCatg, $value2);
+                            //array_push($sousCatg, $value2);
                             
                             array_push($tableau_sous_Cat, $value2);
                             //array_push(, $k)
@@ -72,6 +106,8 @@ $tableau_sous_Cat4 = array ();
    
             //SousCategori2($sousCatg);
      }
+     
+    //---------------------------------------------------- 
      
     //------------------cette methode est pour recuperer la souscetegorie2
      function Cherchersouscat2($rec) {
@@ -170,33 +206,43 @@ $tableau_sous_Cat4 = array ();
             //SousCategori2($sousCatg);
      }
      
+     
+     //-------------------------------------
+     
+     function SousCategori1($rec , $id) {
+        include 'Donnees.inc.php';
+        $sousCatg= array(); 
+            foreach ($Hierarchie as $key => $value) {
+                if($key == $rec){
+                foreach ($value as $key1 => $value1) {
+                        if ($key1 == 'sous-categorie') {
+                        foreach ($value1 as $key2 => $value2) {
+                            array_push($sousCatg, $value2); 
+                        }
+                    }
+                    
+                }
+               }
+            }
+   
+            SousCategori2($sousCatg);
+     }
+     
      function SousCategori2($sousCatg) {
          include 'Donnees.inc.php';
-        
-         global $tableau_sous_Cat2;
          $sousCatg1 = array();
+         
              for ($index = 0; $index < count($sousCatg); $index++) {
                 foreach ($Hierarchie as $key => $value) {
                     if ($key == $sousCatg[$index]) {
                        foreach ($value as $key1 => $value1) {
                          if ($key1 == 'sous-categorie') {
                            foreach ($value1 as $key2 => $value2) {
-                           // echo '<button type="button" onclick="echho(this.id)" >';
-                            //array_push($sousCatg, $k , $value2);
-                            //echo $value2;
                             array_push($sousCatg1, $value2);
-                            array_push($tableau_sous_Cat2, $value2);
-                           
-                           // echo '</button>';
-                          //  echo '<br>';
-                            //$k ++ ;
-                            
                         }
                     }
                     } 
                     }
-                    
-                    
                 }
                 
             }
@@ -209,31 +255,18 @@ $tableau_sous_Cat4 = array ();
      
      function SousCategori3($sousCatg1 , $sousCatg) {
          include 'Donnees.inc.php';
-         
-         global $tableau_sous_Cat3;
          $sousCatg2 = array();
              for ($index = 0; $index < count($sousCatg1); $index++) {
                 foreach ($Hierarchie as $key => $value) {
                     if ($key == $sousCatg1[$index]) {
                        foreach ($value as $key1 => $value1) {
                          if ($key1 == 'sous-categorie') {
-                           foreach ($value1 as $key2 => $value2) {
-                            //echo '<button type="button" onclick="echho(this.id)" >';
-                            //array_push($sousCatg, $k , $value2);
-                           // echo $value2;
-                            array_push($sousCatg2, $value2);
-                            //echo 'dfsdfsdfsdf';
-                            array_push($tableau_sous_Cat3, $value2);
-                           // echo '</button>';
-                           // echo '<br>';
-                          //  $k ++ ;
+                           foreach ($value1 as $key2 => $value2) { array_push($sousCatg2, $value2);
                             
                         }
                     }
                     } 
                     }
-                    
-                    
                 }
                 
             }
@@ -243,8 +276,6 @@ $tableau_sous_Cat4 = array ();
      
      function SousCategori4($sousCatg2 ,$sousCatg1 ,$sousCatg) {
          include 'Donnees.inc.php';
-         
-         global $tableau_sous_Cat4;
          $sousCatg3 = array();
              for ($index = 0; $index < count($sousCatg2); $index++) {
                 foreach ($Hierarchie as $key => $value) {
@@ -252,86 +283,76 @@ $tableau_sous_Cat4 = array ();
                        foreach ($value as $key1 => $value1) {
                          if ($key1 == 'sous-categorie') {
                            foreach ($value1 as $key2 => $value2) {
-                            //echo '<button type="button" onclick="echho(this.id)" >';
-                            //array_push($sousCatg, $k , $value2);
-                          //  echo $value2;
-                            array_push($sousCatg3, $value2);
-                            array_push($tableau_sous_Cat4, $value2);
-                           // echo '</button>';
-                           // echo '<br>';
-                          //  $k ++ ;
-                            
+                            array_push($sousCatg3, $value2);  
                         }
                     }
                     } 
                     }
-                    
-                    
                 }
                 
             }
-            
             Afficher($sousCatg3 ,$sousCatg2 ,$sousCatg1 ,$sousCatg);
-         
      }
      
      function Afficher ($sousCatg3 ,$sousCatg2 ,$sousCatg1 ,$sousCatg) {
          include 'Donnees.inc.php';
-         $titre = array() ;
+         $titre = array() ;//Titre de recette  
          $titre1 ;
             foreach ($Recettes as $key => $value) {
-                foreach ($value as $key1 => $value1) {
-                    if($key1 == 'titre')
-                        $titre1 = $value1;
+                $b = 1;
+                foreach ($value as $key1 => $value1) { 
+                    if($key1 == 'titre'){
+                        $titre1 = $value1;}
                 
                 if ($key1 == 'index') {
+                    
                     foreach ($value1 as $key2 => $value2) {
                         
                     for ($index1 = 0; $index1 < count($sousCatg); $index1++) {
                             if($value2 == $sousCatg[$index1]){
                                 
-                                array_push($titre, $sousCatg[$index1]);
+                                if ($b == 1) {
+                                    array_push($titre, $titre1);
+                                    $b=0;}
+                                
                             }
                         }
-                    }
                     for ($index2 = 0; $index2 < count($sousCatg1); $index2++) {
-                        
-                        if ($value2 == $sousCatg1[$index2]) {
-                            $b = true;
-                            for ($index4 = 0; $index4 < count($titre); $index4++) {
-                                if ($titre[$index4] == $titre1) {
-                                    $b = false;
-                                }
+                            if($value2 == $sousCatg1[$index2]){
+                                
+                                if ($b == 1) {
+                                    array_push($titre, $titre1);
+                                    $b=0;}
+                                
                             }
-                            
-                            if ($b) {
-                                array_push($titre, $titre1);
-                            }
-                            
                         }
+                    for ($index3 = 0; $index3 < count($sousCatg2); $index3++) {
+                            if($value2 == $sousCatg2[$index3]){
+                                
+                                if ($b == 1) {
+                                    array_push($titre, $titre1);
+                                    $b=0;}
+                                
+                            }
+                        } 
+                    for ($index4 = 0; $index4 < count($sousCatg3); $index4++) {
+                            if($value2 == $sousCatg3[$index4]){
+                                
+                                if ($b == 1) {
+                                    array_push($titre, $titre1);
+                                    $b=0;}
+                                
+                            }
+                        }
+
                     }
                     
-                    for ($index3 = 0; $index3 < count($sousCatg2); $index3++) {
-                        
-                        if ($value2 == $sousCatg2[$index3]) {
-                            $b = true;
-                            for ($index5 = 0; $index5 < count($titre); $index5++) {
-                                if ($titre[$index5] == $titre1) {
-                                    $b = false;
-                                }
-                            }
-                            
-                            if ($b) {
-                                array_push($titre, $titre1);
-                            }
-                            
-                        }
-                    }
                     
                 }
     
                 }
             }
+           // echo '<button>'.'$id'.'</button>';
             
             $journalName = array ();
                //echo '<button id="' . 0 . '" type="button" onclick="echho(this.id)" >'.'mohamed</button>';
@@ -341,14 +362,14 @@ $tableau_sous_Cat4 = array ();
     //echo '</button>';
    // echo '<br>';
             
-            //for ($index6 = 0; $index6 < count($titre); $index6++) {
-              //  array_push($journalName, preg_replace('/\s+/', '_', $titre[$index6]));
+            for ($index6 = 0; $index6 < count($titre); $index6++) {
+                array_push($journalName, preg_replace('/\s+/', '_', $titre[$index6]));
                 //echo $index6 . '<br>';
-               // echo '<button>'.$journalName[$index6].'</button>';
+               echo '<button>'.$titre[$index6].'</button>';
                 //echo $journalName[$index6].'<br>';
                 //echo '<img src="./Photos/'.$journalName[$index6].'.jpg" alt="'.$journalName[$index6].'" width="100" height="100">'. '<br>';
                 
-           // }
+           }
          
      }
   
@@ -369,7 +390,7 @@ $tableau_sous_Cat4 = array ();
             //var choi5 = "choix = " + id ;
             //document.cookie = choi5;
             if(id == 0){
-                x =  "<br> <?php //writeMessage(0); ?>"; 
+                x = "<br> <?php recupererRecetteSuperCat(0); ?>";
                 /*var ul = document.getElementById("list");
                 var li = document.createElement("li");
                li.appendChild(document.createTextNode("Four"));
@@ -382,25 +403,25 @@ $tableau_sous_Cat4 = array ();
               //alert(x);
                 
             }else if(id == 1){
-                x = "<br> <?php //writeMessage(1); ?>"; 
+                x = "<br> <?php recupererRecetteSuperCat(1); ?>"; 
                 
             }else if(id == 2){
-                x = "<br> <?php //writeMessage(2); ?>"; 
+                x = "<br> <?php recupererRecetteSuperCat(2); ?>"; 
                 
             }else if(id == 3){
-                x = "<br> <?php//writeMessage(3); ?>"; 
+                x = "<br> <?php recupererRecetteSuperCat(3); ?>"; 
                 
             }else if(id == 4){
-                x =  "<br> <?php //writeMessage(4); ?>"; 
+                x =  "<br> <?php recupererRecetteSuperCat(4); ?>"; 
                 
             }else if(id == 5){
-                x = "<br> <?php //writeMessage(5); ?>"; 
+                x = "<br> <?php  recupererRecetteSuperCat(5); ?>"; 
                 
             }else if(id == 6){
-                x =   "<br> <?php //writeMessage(6); ?>"; 
+                x =   "<br> <?php recupererRecetteSuperCat(6); ?>"; 
                 
             }else if(id == 7){
-                x =  "<br> <?php //writeMessage(7); ?>"; 
+                x =  "<br> <?php recupererRecetteSuperCat(7); ?>"; 
                 
             }
 
@@ -643,7 +664,7 @@ $tableau_sous_Cat4 = array ();
                             </ul>
                     </div>
                     </li>
-                    <li id="4" class="li-4" onclick="echho(this.id0)"><?php echo $tableau_Super_Cat[4];?>
+                    <li id="4" class="li-4" onclick="echho(this.id)"><?php echo $tableau_Super_Cat[4];?>
                     <div class="container-2">
                         <nav class="nav-bar2">
                             <ul>
@@ -876,7 +897,7 @@ $tableau_sous_Cat4 = array ();
         </div>
         
 
-        <form id="T"> 
+        <form id="T" class="form1"> 
             
             
 
