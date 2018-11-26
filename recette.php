@@ -12,6 +12,12 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
+        function trouveIndice($titre1){
+            include 'Donnees.inc.php';
+            for($i=1;$i<count($Recettes);$i++){
+                if($Recettes[$i]['titre']==$titre1)                    return$i;
+            }
+        }
         function getElement($id){
         include 'Donnees.inc.php';
         $donnees=array();
@@ -25,7 +31,8 @@ and open the template in the editor.
             $str = str_replace(' ', '_', $d);
             return $str;
         }
-        $donnees= getElement(5);
+        $indice= trouveIndice($titre1);
+        $donnees= getElement($indice);
         $nomImage= getNomImage($donnees[0]);
         echo '<h2>'.$donnees[0].'</h2>';
         $lien="./Photos/".$nomImage.".jpg";
