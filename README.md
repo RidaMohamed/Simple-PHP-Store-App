@@ -1,6 +1,6 @@
 # Simple PHP Store App 
 
-#Team 
+# Team 
 SALHI Mohamed Elridha
 Elkefif Mohamed Mehdi
 
